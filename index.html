@@ -8,153 +8,148 @@
 <meta name="robots" content="noindex">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Bitter:wght@500;700;800&family=Figtree:wght@400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Instrument+Sans:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
 :root{
-  --tanne:#1E3B2F;
-  --tanne-2:#27483A;
-  --kalk:#F2F4EF;
-  --kalk-2:#E4E8DF;
-  --tinte:#17201B;
-  --paprika:#C4432A;
-  --paprika-hell:#E8826C;
-  --linie:rgba(23,32,27,.18);
-  --r:4px;
-  --pad:clamp(1.25rem,5vw,4.5rem);
-  --max:1320px;
+  --creme:#F1EADC;
+  --creme-2:#E6DCC9;
+  --bordeaux:#4B1722;
+  --bordeaux-2:#5C2230;
+  --schwarz:#161214;
+  --tinte:#1D1618;
+  --gedaempft:#5A4D4F;
+  --auf-dunkel:#D8C8BE;
+  --linie:rgba(29,22,24,.2);
+  --pad:clamp(1.25rem,5vw,5rem);
+  --max:1360px;
 }
 *{box-sizing:border-box;margin:0;padding:0}
-html{scroll-behavior:smooth;scroll-padding-top:76px}
-body{font-family:'Figtree',system-ui,sans-serif;font-size:1.0625rem;line-height:1.6;color:var(--tinte);background:var(--kalk);-webkit-font-smoothing:antialiased;overflow-x:clip}
+html{scroll-behavior:smooth;scroll-padding-top:72px}
+body{font-family:'Instrument Sans',sans-serif;font-size:1.0625rem;line-height:1.65;color:var(--tinte);background:var(--creme);-webkit-font-smoothing:antialiased;overflow-x:clip}
 img{display:block;max-width:100%;height:auto}
 a{color:inherit}
-h1,h2,h3{font-family:'Bitter',Georgia,serif;font-weight:800;line-height:1.08;letter-spacing:-.01em}
+h1,h2,h3{font-family:'Cormorant Garamond',serif;font-weight:500;line-height:1}
 .wrap{max-width:var(--max);margin:0 auto;padding-inline:var(--pad)}
-:focus-visible{outline:3px solid var(--paprika);outline-offset:3px}
+:focus-visible{outline:2px solid var(--bordeaux);outline-offset:3px}
+.dunkel :focus-visible{outline-color:var(--creme)}
 
-/* Kopfzeile */
-.nav{position:fixed;inset:0 0 auto 0;z-index:50;background:var(--tanne);color:var(--kalk);height:68px;display:flex;align-items:center}
+/* Knöpfe: scharfkantig */
+.btn{display:inline-flex;align-items:center;font:500 .95rem 'Instrument Sans',sans-serif;letter-spacing:.04em;text-decoration:none;white-space:nowrap;padding:1rem 1.9rem;border:1px solid var(--bordeaux);background:var(--bordeaux);color:var(--creme);cursor:pointer;transition:background-color .25s,color .25s,transform .2s cubic-bezier(.16,1,.3,1)}
+.btn:hover{background:transparent;color:var(--bordeaux)}
+.btn:active{transform:translateY(1px)}
+.btn.zwei{background:transparent;color:var(--bordeaux)}
+.btn.zwei:hover{background:var(--bordeaux);color:var(--creme)}
+.dunkel .btn{background:var(--creme);color:var(--bordeaux);border-color:var(--creme)}
+.dunkel .btn:hover{background:transparent;color:var(--creme)}
+.dunkel .btn.zwei{background:transparent;color:var(--creme)}
+.dunkel .btn.zwei:hover{background:var(--creme);color:var(--bordeaux)}
+
+/* Kopf */
+.nav{position:fixed;inset:0 0 auto 0;z-index:50;height:72px;background:var(--creme);border-bottom:1px solid var(--linie);display:flex;align-items:center}
 .nav .wrap{display:flex;align-items:center;justify-content:space-between;width:100%}
-.brand{font-family:'Bitter',serif;font-weight:800;font-size:1.15rem;text-decoration:none;white-space:nowrap}
-.nav ul{display:flex;gap:2rem;list-style:none}
-.nav ul a{text-decoration:none;font-weight:500;font-size:.95rem;padding:.4rem 0;border-bottom:2px solid transparent}
-.nav ul a:hover{border-color:var(--paprika-hell)}
-.btn{display:inline-flex;align-items:center;gap:.5rem;font:600 1rem 'Figtree',sans-serif;text-decoration:none;white-space:nowrap;padding:.85rem 1.5rem;border-radius:var(--r);border:2px solid transparent;cursor:pointer;transition:transform .2s cubic-bezier(.16,1,.3,1),background-color .2s}
-.btn:active{transform:translateY(1px) scale(.98)}
-.btn-rot{background:var(--paprika);color:#fff}
-.btn-rot:hover{background:#A9361F}
-.btn-rand{border-color:currentColor;background:transparent}
-.btn-rand:hover{background:rgba(255,255,255,.1)}
-.btn-dunkel{background:var(--tanne);color:var(--kalk)}
-.btn-dunkel:hover{background:var(--tanne-2)}
-.nav .btn{padding:.55rem 1.1rem;font-size:.95rem}
+.brand{font-family:'Cormorant Garamond',serif;font-weight:600;font-size:1.5rem;text-decoration:none;white-space:nowrap}
+.nav ul{display:flex;gap:2.5rem;list-style:none}
+.nav ul a{text-decoration:none;font-size:.92rem;letter-spacing:.06em;padding:.4rem 0;border-bottom:1px solid transparent;transition:border-color .2s}
+.nav ul a:hover{border-color:var(--bordeaux)}
+.nav .btn{padding:.7rem 1.3rem;font-size:.88rem}
 
 /* Hero */
-.hero{display:grid;grid-template-columns:1.05fr .95fr;min-height:100dvh;background:var(--tanne);color:var(--kalk);padding-top:68px}
-.hero-text{display:flex;flex-direction:column;justify-content:center;gap:1.5rem;padding:3rem var(--pad) 3rem max(var(--pad),calc((100vw - var(--max))/2 + var(--pad)))}
-.hero h1{font-size:clamp(2.6rem,5.6vw,5rem)}
-.hero h1 em{font-style:normal;color:var(--paprika-hell)}
-.hero p.lead{max-width:34ch;font-size:1.2rem;color:#DDE4DB}
+.hero{display:grid;grid-template-columns:1.1fr .9fr;min-height:100dvh;padding-top:72px}
+.hero-text{display:flex;flex-direction:column;justify-content:center;gap:2rem;padding:3rem var(--pad) 3rem max(var(--pad),calc((100vw - var(--max))/2 + var(--pad)))}
+.hero h1{font-size:clamp(3.4rem,8.2vw,8rem);letter-spacing:-.025em;font-weight:500}
+.hero h1 span{display:block}
+.hero p{max-width:30ch;font-size:1.15rem;color:var(--gedaempft)}
 .hero .cta{display:flex;flex-wrap:wrap;gap:.75rem}
-.status{display:inline-flex;align-items:center;gap:.6rem;font-weight:600;font-size:.95rem;padding:.45rem .9rem;border-radius:var(--r);background:var(--kalk);color:var(--tinte);width:fit-content}
-.status i{width:.65rem;height:.65rem;border-radius:50%;background:#7a7f7c}
-.status.auf i{background:#1F8A4C}
-.status.zu i{background:var(--paprika)}
 .hero-bild{position:relative;min-height:60vh}
 .hero-bild img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 40%}
 
-/* Sektionen */
-section{padding-block:clamp(4rem,9vw,8rem)}
-.kopf{max-width:40rem;margin-bottom:3rem}
-.kopf h2{font-size:clamp(2rem,4vw,3.25rem)}
-.kopf p{margin-top:1rem;color:#46524B;max-width:48ch}
+section{padding-block:clamp(5rem,10vw,9rem)}
+h2{font-size:clamp(2.6rem,5vw,4.5rem);letter-spacing:-.015em}
+h2 em{font-style:italic}
 
 /* Küche */
-.kueche-grid{display:grid;grid-template-columns:repeat(12,1fr);gap:1.25rem}
-.kueche-grid figure{margin:0}
-.kueche-grid img{width:100%;height:100%;object-fit:cover;border-radius:var(--r)}
-.k1{grid-column:1/8}
-.k2{grid-column:8/13;margin-top:4rem}
-.k3{grid-column:1/6}
-.k4{grid-column:6/13;margin-top:-3rem}
-.kueche-grid .bild{aspect-ratio:4/3;overflow:hidden;border-radius:var(--r)}
-.k1 .bild{aspect-ratio:16/11}
-.k4 .bild{aspect-ratio:16/9}
-.kueche-grid figcaption{padding-top:.7rem;font-family:'Bitter',serif;font-weight:700;font-size:1.15rem}
-.kueche-grid figcaption span{display:block;font:400 .95rem 'Figtree',sans-serif;color:#46524B}
+.kueche-grid{display:grid;grid-template-columns:.8fr 1.2fr;gap:clamp(2rem,6vw,6rem);align-items:start}
+.kueche-text{position:sticky;top:120px}
+.kueche-text p{margin-top:1.5rem;max-width:34ch;color:var(--gedaempft)}
+.bilder{display:grid;grid-template-columns:1fr 1fr;gap:1.5rem}
+.bilder figure{margin:0}
+.bilder .bild{aspect-ratio:4/5;overflow:hidden}
+.bilder img{width:100%;height:100%;object-fit:cover}
+.bilder figure:nth-child(even){margin-top:4rem}
+.bilder figcaption{padding-top:.8rem;font-family:'Cormorant Garamond',serif;font-weight:600;font-size:1.35rem}
 
 /* Karte */
-.karte{background:var(--tanne);color:var(--kalk)}
-.karte .kopf p{color:#CBD5CB}
-.karte-cols{display:grid;grid-template-columns:1fr 1fr;gap:3rem 5rem}
-.karte h3{font-size:1.5rem;color:var(--paprika-hell);margin-bottom:1.25rem}
-.karte ul{list-style:none;display:grid;gap:1.1rem}
-.karte li{display:grid;grid-template-columns:auto 1fr auto;column-gap:.6rem;align-items:baseline}
-.karte li b{font-weight:600}
-.karte li .dots{border-bottom:2px dotted rgba(242,244,239,.35);transform:translateY(-4px)}
-.karte li .preis{font-weight:600;white-space:nowrap}
-.karte li small{grid-column:1/-1;color:#C2CEC3;font-size:.95rem}
-.karte .hinweis{margin-top:3rem;color:#C2CEC3;font-size:.95rem}
+.karte{background:var(--bordeaux);color:var(--creme)}
+.karte-kopf{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:end;gap:2rem;margin-bottom:3.5rem}
+.tabs{display:flex;gap:2rem}
+.tabs button{font:500 .95rem 'Instrument Sans',sans-serif;letter-spacing:.06em;background:none;border:0;border-bottom:1px solid transparent;color:var(--auf-dunkel);padding:.5rem 0;cursor:pointer;transition:color .2s,border-color .2s}
+.tabs button:hover{color:var(--creme)}
+.tabs button[aria-selected="true"]{color:var(--creme);border-color:var(--creme)}
+.panel{columns:2;column-gap:clamp(2rem,6vw,6rem)}
+.panel[hidden]{display:none}
+.grp{break-inside:avoid;margin-bottom:3rem}
+.grp h3{font-size:1.9rem;font-style:italic;padding-bottom:.9rem;margin-bottom:1.4rem;border-bottom:1px solid rgba(241,234,220,.3)}
+.grp ul{list-style:none;display:grid;gap:1.3rem}
+.grp li{display:grid;grid-template-columns:1fr auto;column-gap:1.5rem}
+.grp .n{font-weight:500}
+.grp .p{font-variant-numeric:tabular-nums;white-space:nowrap}
+.grp small{grid-column:1/-1;color:var(--auf-dunkel);font-size:.92rem;line-height:1.5;max-width:44ch}
+.karte .hinweis{margin-top:1rem;color:var(--auf-dunkel);font-size:.92rem}
 
-/* Biergarten */
-.draussen-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:clamp(2rem,6vw,6rem);align-items:center}
-.draussen-grid img{width:100%;aspect-ratio:3/4;object-fit:cover;border-radius:var(--r)}
-.draussen h2{font-size:clamp(2rem,4vw,3.25rem);margin-bottom:1.25rem}
-.draussen p{max-width:46ch;color:#37433C}
-.punkte{display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-top:2rem}
-.punkte div{background:var(--kalk-2);padding:1.1rem 1.25rem;border-radius:var(--r)}
-.punkte b{display:block;font-family:'Bitter',serif;font-size:1.1rem}
-.punkte span{font-size:.95rem;color:#46524B}
-.band{margin-top:clamp(3rem,6vw,5rem)}
-.band img{width:100%;aspect-ratio:21/9;object-fit:cover;border-radius:var(--r)}
+/* Draußen */
+.draussen{background:var(--creme-2)}
+.draussen-grid{display:grid;grid-template-columns:5fr 6fr;gap:clamp(2rem,7vw,8rem);align-items:center}
+.draussen-grid img{width:100%;aspect-ratio:4/5;object-fit:cover}
+.draussen p{margin-top:1.75rem;max-width:42ch;color:var(--gedaempft)}
+.fakten{list-style:none;margin-top:2.5rem;display:grid;gap:1.1rem;max-width:30rem}
+.fakten li{display:grid;grid-template-columns:9rem 1fr;align-items:baseline}
+.fakten b{font-family:'Cormorant Garamond',serif;font-size:1.45rem;font-weight:600}
 
 /* Kontakt */
-.kontakt{background:var(--kalk-2)}
-.kontakt-grid{display:grid;grid-template-columns:1fr 1fr;gap:clamp(2rem,6vw,6rem)}
-.kontakt h2{font-size:clamp(2rem,4vw,3.25rem);margin-bottom:1.5rem}
-.zeiten{width:100%;border-collapse:collapse;max-width:30rem}
-.zeiten td{padding:.7rem 0;border-bottom:1px solid var(--linie)}
+.kontakt{background:var(--schwarz);color:var(--creme)}
+.kontakt-grid{display:grid;grid-template-columns:1fr 1fr;gap:clamp(2rem,7vw,8rem)}
+.zeiten{width:100%;max-width:30rem;border-collapse:collapse;margin-top:2.5rem}
+.zeiten td{padding:.85rem 0;border-bottom:1px solid rgba(241,234,220,.18)}
 .zeiten td:last-child{text-align:right;font-variant-numeric:tabular-nums}
-.zeiten tr.heute td{font-weight:700;color:var(--paprika)}
-.zeiten tr.heute td:first-child::after{content:' (heute)';font-weight:500}
-.adresse{font-style:normal;display:grid;gap:1.5rem}
-.adresse .zeile b{display:block;font-family:'Bitter',serif;font-size:1.1rem;margin-bottom:.15rem}
-.adresse a:not(.btn){text-decoration-thickness:2px;text-underline-offset:3px}
-.adresse .cta{display:flex;flex-wrap:wrap;gap:.75rem;margin-top:.5rem}
+.zeiten tr.heute td{color:var(--creme);font-weight:600}
+.zeiten tr:not(.heute) td{color:var(--auf-dunkel)}
+.adresse{font-style:normal;margin-top:2.5rem;display:grid;gap:1.75rem}
+.adresse b{display:block;font-family:'Cormorant Garamond',serif;font-size:1.5rem;font-weight:600;margin-bottom:.1rem}
+.adresse a:not(.btn){text-underline-offset:4px}
+.adresse .cta{display:flex;flex-wrap:wrap;gap:.75rem}
 
-footer{background:var(--tanne);color:#C8D3C9;padding-block:2rem;font-size:.95rem}
+footer{background:var(--schwarz);color:var(--auf-dunkel);padding-block:2rem;font-size:.9rem;border-top:1px solid rgba(241,234,220,.15)}
 footer .wrap{display:flex;flex-wrap:wrap;gap:1rem 2rem;justify-content:space-between}
-footer a{text-underline-offset:3px}
 
-/* Rechtstexte als Overlay */
-.legal{display:none;position:fixed;inset:0;z-index:80;background:var(--kalk);overflow:auto;padding:5rem var(--pad)}
+.legal{display:none;position:fixed;inset:0;z-index:80;background:var(--creme);overflow:auto;padding:6rem var(--pad)}
 .legal:target{display:block}
 .legal article{max-width:44rem;margin:0 auto}
-.legal h2{font-size:2rem;margin-bottom:1rem}
+.legal h2{font-size:3rem;margin-bottom:1.25rem}
 .legal p{margin-bottom:.9rem}
 .legal .zu{position:fixed;top:1rem;right:var(--pad)}
-.todo{background:#FFF1D6;border:2px dashed #B7791F;padding:.8rem 1rem;border-radius:var(--r);margin-bottom:1.25rem}
+.todo{border:1px dashed var(--bordeaux);padding:.8rem 1rem;margin-bottom:1.25rem}
 
-/* Bewegung */
 @media (prefers-reduced-motion:no-preference){
-  .rv{opacity:0;transform:translateY(24px);transition:opacity .7s cubic-bezier(.16,1,.3,1),transform .7s cubic-bezier(.16,1,.3,1)}
+  .rv{opacity:0;transform:translateY(28px);transition:opacity .9s cubic-bezier(.16,1,.3,1),transform .9s cubic-bezier(.16,1,.3,1)}
   .rv.an{opacity:1;transform:none}
 }
 
 @media (max-width:900px){
   .nav ul{display:none}
   .hero{grid-template-columns:1fr;min-height:0}
-  .hero-text{padding:2.5rem var(--pad)}
+  .hero-text{padding:3rem var(--pad)}
   .hero-bild{min-height:0;aspect-ratio:4/5}
-  .kueche-grid{display:flex;flex-direction:column;gap:2rem}
-  .k2,.k4{margin-top:0}
-  .karte-cols,.draussen-grid,.kontakt-grid{grid-template-columns:1fr}
-  .draussen-grid img{aspect-ratio:4/5}
-  .band img{aspect-ratio:16/9}
+  .kueche-grid,.draussen-grid,.kontakt-grid{grid-template-columns:1fr}
+  .kueche-text{position:static}
+  .panel{columns:1}
+  .bilder{grid-template-columns:1fr}
+  .bilder figure:nth-child(even){margin-top:0}
+  .bilder .bild{aspect-ratio:4/3}
 }
 @media (max-width:480px){
-  .punkte{grid-template-columns:1fr}
-  .brand{font-size:1rem}
+  .brand{font-size:1.25rem}
+  .nav .btn{padding:.6rem 1rem}
+  .fakten li{grid-template-columns:1fr}
 }
 </style>
 </head>
@@ -171,19 +166,18 @@ footer a{text-underline-offset:3px}
         <li><a href="#kontakt">Kontakt</a></li>
       </ul>
     </nav>
-    <a class="btn btn-rot" href="tel:+496441381678">Tisch reservieren</a>
+    <a class="btn" href="tel:+496441381678">Reservieren</a>
   </div>
 </header>
 
 <main id="top">
-  <section class="hero" style="padding-block:0;padding-top:68px">
+  <section class="hero" style="padding-block:0;padding-top:72px">
     <div class="hero-text">
-      <span class="status" data-live><i></i><span>Öffnungszeiten werden geladen</span></span>
-      <h1>Deutsche Küche, <em>direkt an der Lahn.</em></h1>
-      <p class="lead">Der Chef kocht selbst: Schnitzel, Hackbraten und Cordon bleu, dazu ein frisch gezapftes Pils im Biergarten.</p>
+      <h1><span>Wirtshaus</span><span>an der Lahn</span></h1>
+      <p>Deutsche Küche, Biergarten und Kegelbahn an der Dammstraße in Wetzlar.</p>
       <div class="cta">
-        <a class="btn btn-rot" href="tel:+496441381678">06441 381678</a>
-        <a class="btn btn-rand" href="#speisekarte">Speisekarte</a>
+        <a class="btn" href="#speisekarte">Speisekarte</a>
+        <a class="btn zwei" href="tel:+496441381678">06441 381678</a>
       </div>
     </div>
     <div class="hero-bild">
@@ -192,99 +186,89 @@ footer a{text-underline-offset:3px}
   </section>
 
   <section id="kueche">
-    <div class="wrap">
-      <div class="kopf rv">
-        <h2>Aus der Küche</h2>
-        <p>Frisch zubereitet und ehrlich portioniert. Hier ein Blick auf das, was bei uns auf den Tisch kommt.</p>
+    <div class="wrap kueche-grid">
+      <div class="kueche-text rv">
+        <h2>Aus der <em>Küche</em></h2>
+        <p>Schnitzel in allen Variationen, Hackbraten und Hausmannskost. Frisch zubereitet, ehrlich portioniert.</p>
       </div>
-      <div class="kueche-grid">
-        <figure class="k1 rv"><div class="bild"><img src="images/schnitzel-zitrone.webp" alt="Paniertes Schnitzel mit Zitrone und Petersilie" width="1700" height="1275" loading="lazy"></div>
-          <figcaption>Schnitzel Wiener Art<span>Mit Zitrone, goldbraun gebacken</span></figcaption></figure>
-        <figure class="k2 rv"><div class="bild"><img src="images/cordon-bleu.webp" alt="Cordon bleu mit Kroketten und Salat" width="1700" height="1275" loading="lazy"></div>
-          <figcaption>Cordon bleu<span>Mit Schinken und Käse, dazu Kroketten</span></figcaption></figure>
-        <figure class="k3 rv"><div class="bild"><img src="images/hackbraten.webp" alt="Hackbraten mit Röstzwiebeln, Pommes und Salat" width="1700" height="1275" loading="lazy"></div>
-          <figcaption>Hackbraten<span>Mit Röstzwiebeln und Beilagensalat</span></figcaption></figure>
-        <figure class="k4 rv"><div class="bild"><img src="images/tisch.webp" alt="Gedeckter Holztisch mit Schnitzel in Sauce, Pommes, Salat und Pils" width="1900" height="1070" loading="lazy"></div>
-          <figcaption>Schnitzel mit Sauce<span>Mit Pommes, Salat und einem kühlen Pils</span></figcaption></figure>
+      <div class="bilder">
+        <figure class="rv"><div class="bild"><img src="images/schnitzel-zitrone.webp" alt="Paniertes Schnitzel mit Zitrone und Petersilie" width="1700" height="1275" loading="lazy"></div><figcaption>Schnitzel Wiener Art</figcaption></figure>
+        <figure class="rv"><div class="bild"><img src="images/cordon-bleu.webp" alt="Cordon Bleu mit Kroketten und Salat" width="1700" height="1275" loading="lazy"></div><figcaption>Cordon Bleu</figcaption></figure>
+        <figure class="rv"><div class="bild"><img src="images/hackbraten.webp" alt="Hackbraten mit Röstzwiebeln, Pommes und Salat" width="1700" height="1275" loading="lazy"></div><figcaption>Hackbraten</figcaption></figure>
+        <figure class="rv"><div class="bild"><img src="images/schnitzel-sauce.webp" alt="Schnitzel mit Pfeffersoße" width="1700" height="1275" loading="lazy"></div><figcaption>Schnitzel mit Soße</figcaption></figure>
       </div>
     </div>
   </section>
 
-  <section id="speisekarte" class="karte">
+  <section id="speisekarte" class="karte dunkel">
     <div class="wrap">
-      <div class="kopf rv">
+      <div class="karte-kopf rv">
         <h2>Speisekarte</h2>
-        <p>Ein Auszug aus der Karte. Preise und Tagesgerichte tragen wir nach der aktuellen Karte ein.</p>
-      </div>
-      <div class="karte-cols">
-        <div class="rv">
-          <h3>Vom Schnitzel</h3>
-          <ul>
-            <li><b>Schnitzel Wiener Art</b><span class="dots"></span><span class="preis">[ € ]</span><small>Mit Zitrone, Pommes frites oder Kroketten</small></li>
-            <li><b>Schnitzel mit Sauce</b><span class="dots"></span><span class="preis">[ € ]</span><small>Mit Pfeffersauce, Pommes frites und Salat</small></li>
-            <li><b>Cordon bleu</b><span class="dots"></span><span class="preis">[ € ]</span><small>Mit Schinken und Käse, dazu Kroketten</small></li>
-          </ul>
-        </div>
-        <div class="rv">
-          <h3>Hausmannskost</h3>
-          <ul>
-            <li><b>Hackbraten</b><span class="dots"></span><span class="preis">[ € ]</span><small>Mit Röstzwiebeln und Beilage nach Wahl</small></li>
-            <li><b>Gemischter Salat</b><span class="dots"></span><span class="preis">[ € ]</span><small>Als Beilage oder als eigene Portion</small></li>
-          </ul>
-          <h3 style="margin-top:2.25rem">Getränke</h3>
-          <ul>
-            <li><b>Licher Pils vom Fass</b><span class="dots"></span><span class="preis">[ € ]</span></li>
-            <li><b>Alkoholfreie Getränke</b><span class="dots"></span><span class="preis">[ € ]</span></li>
-          </ul>
+        <div class="tabs" role="tablist" aria-label="Karte wählen">
+          <button role="tab" id="t1" aria-controls="p1" aria-selected="true">Speisekarte</button>
+          <button role="tab" id="t2" aria-controls="p2" aria-selected="false">Unsere Klassiker</button>
         </div>
       </div>
-      <p class="hinweis rv">Die vollständige Karte erhalten Sie im Haus oder telefonisch unter <a href="tel:+496441381678">06441 381678</a>.</p>
+      <div class="panel" id="p1" role="tabpanel" aria-labelledby="t1">
+<div class="grp"><h3>Schnitzel &amp; Cordon Bleu</h3><ul><li><span class="n">Schnitzel Wiener Art</span><span class="p">17,90&nbsp;€</span><small>Paniertes Schnitzel mit Pommes, Remoulade und Zitrone</small></li><li><span class="n">Schnitzel mit Soße</span><span class="p">17,90&nbsp;€</span><small>Mit Zwiebel-, Paprika- oder Pilzsoße nach Wahl und Pommes</small></li><li><span class="n">Holsteiner Schnitzel</span><span class="p">17,90&nbsp;€</span><small>Mit zwei Spiegeleiern und Pommes</small></li><li><span class="n">Cordon Bleu</span><span class="p">18,90&nbsp;€</span><small>Mit Schinken und Käse gefüllt, dazu Pommes</small></li><li><span class="n">Schnitzel des Monats</span><small>Unsere wechselnde Spezialität, siehe aktuellen Aushang</small></li></ul></div>
+<div class="grp"><h3>Fleischgerichte &amp; Burger</h3><ul><li><span class="n">Schweinefilet</span><span class="p">17,90&nbsp;€</span><small>Mit Pfeffersoße, Kroketten und kleinem Salat</small></li><li><span class="n">Hähnchenfilet mit Gemüse</span><span class="p">17,90&nbsp;€</span><small>Mit Paprika, Tomate, Aubergine, Zucchini und Kartoffeln</small></li><li><span class="n">Hackbraten (300 g) mit Pommes</span><span class="p">15,90&nbsp;€</span><small>Mit Zwiebel-, Paprika- oder Pilzsoße nach Wahl</small></li><li><span class="n">Hackbraten (300 g) mit Brot</span><span class="p">13,90&nbsp;€</span><small>Mit Zwiebel-, Paprika- oder Pilzsoße nach Wahl</small></li><li><span class="n">Cheeseburger</span><span class="p">17,90&nbsp;€</span><small>Rindfleisch, Käse, Rucola, Tomate, Gurke, rote Zwiebeln und hausgemachte Burgersoße, dazu Pommes</small></li></ul></div>
+<div class="grp"><h3>Fisch &amp; Pasta</h3><ul><li><span class="n">Scholle „Müllerin Art“</span><span class="p">17,90&nbsp;€</span><small>Zwei Filetstücke in Butter gebraten, mit Salzkartoffeln, Remoulade und kleinem Salat</small></li><li><span class="n">Nudeln mit Garnelen</span><span class="p">17,90&nbsp;€</span><small>In cremiger Sahnesoße mit Knoblauch</small></li></ul></div>
+<div class="grp"><h3>Salate</h3><ul><li><span class="n">Bunter Salat der Saison</span><span class="p">12,90&nbsp;€</span><small>Mit Schinken, Käse, roten Zwiebeln, Tomaten, Gurken und Mandelsplittern</small></li><li><span class="n">Mit Hähnchenstreifen</span><span class="p">15,90&nbsp;€</span></li><li><span class="n">Mit Garnelen</span><span class="p">17,90&nbsp;€</span></li></ul></div>
+<div class="grp"><h3>Vegetarisch</h3><ul><li><span class="n">Ofenkartoffel</span><span class="p">10,90&nbsp;€</span><small>Mit Kräuterquark und kleinem Salat</small></li><li><span class="n">Panierter Schafskäse</span><span class="p">15,90&nbsp;€</span><small>Mit kleinem Salat, Preiselbeeren und Kartoffeln</small></li><li><span class="n">Gebratener Blumenkohl</span><span class="p">14,90&nbsp;€</span><small>Mit Champignons, Zwiebeln, Kartoffeln und Dip</small></li></ul></div>
+<div class="grp"><h3>Jeden Freitag</h3><ul><li><span class="n">Spare Ribs</span><span class="p">19,90&nbsp;€</span><small>Mit Barbecue-Soße, Brötchen und Salat</small></li></ul></div>
+      </div>
+      <div class="panel" id="p2" role="tabpanel" aria-labelledby="t2" hidden>
+<div class="grp"><h3>Wurstklassiker</h3><ul><li><span class="n">Bratwurst mit Brötchen</span><span class="p">4,90&nbsp;€</span></li><li><span class="n">Rindswurst mit Brötchen</span><span class="p">5,90&nbsp;€</span></li><li><span class="n">Currywurst mit Brötchen</span><span class="p">6,50&nbsp;€</span></li><li><span class="n">Rinds-Currywurst mit Brötchen</span><span class="p">7,50&nbsp;€</span></li><li><span class="n">Currywurst mit Pommes</span><span class="p">8,90&nbsp;€</span></li><li><span class="n">Rinds-Currywurst mit Pommes</span><span class="p">9,90&nbsp;€</span></li></ul></div>
+<div class="grp"><h3>Deftiges &amp; Leckeres</h3><ul><li><span class="n">Strammer Max</span><span class="p">8,90&nbsp;€</span><small>Brot mit Creme, Kochschinken und zwei Spiegeleiern</small></li><li><span class="n">Chicken Wings (7 Stück)</span><span class="p">13,90&nbsp;€</span><small>Mit Pommes und Chili-Dip</small></li><li><span class="n">Nierengulasch mit Brötchen</span><span class="p">6,90&nbsp;€</span></li><li><span class="n">Kartoffelpuffer (3 Stück)</span><span class="p">9,90&nbsp;€</span><small>Mit Apfelmus</small></li></ul></div>
+<div class="grp"><h3>Suppen &amp; Eintöpfe</h3><ul><li><span class="n">Kleine Portion</span><span class="p">4,00&nbsp;€</span></li><li><span class="n">Große Portion mit Brötchen</span><span class="p">7,50&nbsp;€</span></li></ul></div>
+<div class="grp"><h3>Für unsere kleinen Gäste</h3><ul><li><span class="n">Kinderschnitzel</span><span class="p">6,00&nbsp;€</span><small>Mit Pommes</small></li><li><span class="n">Chicken Nuggets (4 Stück)</span><span class="p">6,00&nbsp;€</span><small>Mit Pommes</small></li><li><span class="n">Chicken Wings (3 Stück)</span><span class="p">6,00&nbsp;€</span><small>Mit Pommes</small></li></ul></div>
+<div class="grp"><h3>Beilagen</h3><ul><li><span class="n">Portion Pommes</span><span class="p">3,50&nbsp;€</span></li><li><span class="n">Kroketten (6 Stück)</span><span class="p">4,00&nbsp;€</span></li><li><span class="n">Kleiner Beilagensalat</span><span class="p">4,00&nbsp;€</span></li></ul></div>
+      </div>
+      <p class="hinweis">Alle Preise in Euro. Änderungen vorbehalten.</p>
     </div>
   </section>
 
   <section id="draussen" class="draussen">
-    <div class="wrap">
-      <div class="draussen-grid">
-        <div class="rv"><img src="images/biergarten-maibaum.webp" alt="Maibaum im Biergarten unter grünen Bäumen" width="1400" height="1867" loading="lazy"></div>
-        <div class="rv">
-          <h2>Biergarten und Kegelbahn</h2>
-          <p>Unter Bäumen sitzen, ein Pils trinken, danach eine Runde kegeln. Das Haus liegt direkt an der Lahn, für Radfahrer und Spaziergänger ein guter Halt.</p>
-          <div class="punkte">
-            <div><b>Biergarten</b><span>Schattige Plätze im Grünen</span></div>
-            <div><b>Kegelbahn</b><span>Für Vereine und Gruppen</span></div>
-            <div><b>Barrierefrei</b><span>Eingang, Parkplatz und WC</span></div>
-            <div><b>Gruppen</b><span>Anfragen gern telefonisch</span></div>
-          </div>
-        </div>
+    <div class="wrap draussen-grid">
+      <div class="rv"><img src="images/biergarten-maibaum.webp" alt="Maibaum im Biergarten unter grünen Bäumen" width="1400" height="1867" loading="lazy"></div>
+      <div class="rv">
+        <h2>Biergarten &amp; <em>Kegelbahn</em></h2>
+        <p>Unter Bäumen sitzen, danach eine Runde kegeln. Direkt an der Lahn, für Radfahrer und Spaziergänger ein guter Halt.</p>
+        <ul class="fakten">
+          <li><b>Biergarten</b><span>Schattige Plätze im Grünen</span></li>
+          <li><b>Kegelbahn</b><span>Für Vereine und Gruppen</span></li>
+          <li><b>Zugang</b><span>Rollstuhlgerechter Eingang, Parkplatz und WC</span></li>
+        </ul>
       </div>
-      <div class="band rv"><img src="images/salat.webp" alt="Frischer gemischter Salat auf einem Holztisch" width="1700" height="766" loading="lazy"></div>
     </div>
   </section>
 
-  <section id="kontakt" class="kontakt">
+  <section id="kontakt" class="kontakt dunkel">
     <div class="wrap kontakt-grid">
       <div class="rv">
         <h2>Öffnungszeiten</h2>
         <table class="zeiten" id="zeiten">
           <tr data-day="1"><td>Montag</td><td>Ruhetag</td></tr>
           <tr data-day="2"><td>Dienstag</td><td>Ruhetag</td></tr>
-          <tr data-day="3" data-slots="17:00-22:00"><td>Mittwoch</td><td>17:00 - 22:00</td></tr>
-          <tr data-day="4" data-slots="14:00-22:00"><td>Donnerstag</td><td>14:00 - 22:00</td></tr>
-          <tr data-day="5" data-slots="17:00-22:00"><td>Freitag</td><td>17:00 - 22:00</td></tr>
-          <tr data-day="6" data-slots="17:00-22:00"><td>Samstag</td><td>17:00 - 22:00</td></tr>
-          <tr data-day="0" data-slots="10:00-20:00"><td>Sonntag</td><td>10:00 - 20:00</td></tr>
+          <tr data-day="3"><td>Mittwoch</td><td>17:00 - 22:00</td></tr>
+          <tr data-day="4"><td>Donnerstag</td><td>14:00 - 22:00</td></tr>
+          <tr data-day="5"><td>Freitag</td><td>17:00 - 22:00</td></tr>
+          <tr data-day="6"><td>Samstag</td><td>17:00 - 22:00</td></tr>
+          <tr data-day="0"><td>Sonntag</td><td>10:00 - 20:00</td></tr>
         </table>
       </div>
-      <address class="adresse rv">
-        <div class="zeile"><b>Adresse</b>Dammstraße 70<br>35576 Wetzlar</div>
-        <div class="zeile"><b>Telefon</b><a href="tel:+496441381678">06441 381678</a></div>
-        <div class="zeile"><b>E-Mail</b><a href="mailto:[info@beispiel.de]">[info@beispiel.de]</a></div>
-        <div class="cta">
-          <a class="btn btn-rot" href="tel:+496441381678">Jetzt anrufen</a>
-          <a class="btn btn-dunkel" href="https://www.google.com/maps/search/?api=1&query=Wirtshaus+an+der+Lahn+Dammstra%C3%9Fe+70+35576+Wetzlar" target="_blank" rel="noopener">Route planen</a>
-        </div>
-        <span class="status" data-live><i></i><span>Öffnungszeiten werden geladen</span></span>
-      </address>
+      <div class="rv">
+        <h2>Besuchen Sie uns</h2>
+        <address class="adresse">
+          <div><b>Adresse</b>Dammstraße 70<br>35576 Wetzlar</div>
+          <div><b>Telefon</b><a href="tel:+496441381678">06441 381678</a></div>
+          <div><b>E-Mail</b><a href="mailto:[info@beispiel.de]">[info@beispiel.de]</a></div>
+          <div class="cta">
+            <a class="btn" href="tel:+496441381678">Tisch reservieren</a>
+            <a class="btn zwei" href="https://www.google.com/maps/search/?api=1&query=Wirtshaus+an+der+Lahn+Dammstra%C3%9Fe+70+35576+Wetzlar" target="_blank" rel="noopener">Route planen</a>
+          </div>
+        </address>
+      </div>
     </div>
   </section>
 </main>
@@ -297,7 +281,7 @@ footer a{text-underline-offset:3px}
 </footer>
 
 <div class="legal" id="impressum">
-  <a class="btn btn-dunkel zu" href="#top">Schließen</a>
+  <a class="btn zu" href="#top">Schließen</a>
   <article>
     <h2>Impressum</h2>
     <p class="todo">Platzhalter. Angaben vom Betreiber einsetzen.</p>
@@ -307,7 +291,7 @@ footer a{text-underline-offset:3px}
   </article>
 </div>
 <div class="legal" id="datenschutz">
-  <a class="btn btn-dunkel zu" href="#top">Schließen</a>
+  <a class="btn zu" href="#top">Schließen</a>
   <article>
     <h2>Datenschutz</h2>
     <p class="todo">Platzhalter. Vor Veröffentlichung rechtlich prüfen lassen.</p>
@@ -318,21 +302,19 @@ footer a{text-underline-offset:3px}
 
 <script>
 (function(){
-  var rows=document.querySelectorAll('#zeiten tr[data-day]');
-  var now=new Date(), day=now.getDay(), mins=now.getHours()*60+now.getMinutes();
-  function toMin(s){var p=s.split(':');return +p[0]*60+ +p[1];}
-  var offen=false, bis='';
-  rows.forEach(function(r){
-    if(+r.dataset.day!==day)return;
-    r.classList.add('heute');
-    (r.dataset.slots||'').split(',').filter(Boolean).forEach(function(s){
-      var a=s.split('-');
-      if(mins>=toMin(a[0])&&mins<toMin(a[1])){offen=true;bis=a[1];}
-    });
+  var day=new Date().getDay();
+  document.querySelectorAll('#zeiten tr').forEach(function(r){
+    if(+r.dataset.day===day)r.classList.add('heute');
   });
-  document.querySelectorAll('[data-live]').forEach(function(el){
-    el.classList.add(offen?'auf':'zu');
-    el.querySelector('span').textContent=offen?('Jetzt geöffnet, bis '+bis+' Uhr'):'Derzeit geschlossen';
+  var tabs=document.querySelectorAll('.tabs button');
+  tabs.forEach(function(t){
+    t.addEventListener('click',function(){
+      tabs.forEach(function(o){
+        var on=o===t;
+        o.setAttribute('aria-selected',on);
+        document.getElementById(o.getAttribute('aria-controls')).hidden=!on;
+      });
+    });
   });
   var io=new IntersectionObserver(function(es){
     es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('an');io.unobserve(e.target);}});

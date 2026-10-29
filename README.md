@@ -3,5 +3,5 @@
 Vorschau-Website als einzelne HTML-Datei (`index.html`), Bilder in `images/`.
 
 - Fotos stammen aus dem Google-Maps-Profil des Betriebs; Event-Bilder wurden bewusst weggelassen.
-- Preise der Speisekarte sind als `[ € ]` Platzhalter markiert, ebenso E-Mail und Impressum.
+- Speisekarte mit allen Preisen laut den Karten des Betriebs; E-Mail und Impressum sind Platzhalter.
 - Keine Rezensionen, keine Embeds, keine Cookies. Einzige Fremdverbindung: Google Fonts.
