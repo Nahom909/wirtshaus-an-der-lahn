@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Events | Wirtshaus an der Lahn</title>
+<meta name="description" content="Veranstaltungen im Wirtshaus an der Lahn in Wetzlar: Würfelturnier, Spare Ribs am Freitag und Kegelbahn für Gruppen.">
+<meta name="robots" content="noindex">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,600;12..96,700&family=Geist:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<style>
+.nav ul a[aria-current="page"]{color:var(--bordeaux)}
+.titel-box{background:var(--bordeaux);color:var(--creme);border-radius:32px;margin:96px 12px 0;padding:clamp(3rem,8vw,7rem) 0 clamp(2.5rem,6vw,5rem)}
+.titel-box h1{font-size:clamp(3.6rem,11vw,10rem);letter-spacing:-.05em;line-height:.88}
+.titel-box p{margin-top:1.75rem;max-width:34ch;font-size:1.15rem;color:var(--auf-dunkel)}
+.event-grid{display:grid;grid-template-columns:repeat(12,1fr);gap:14px}
+.flyer{grid-column:1/6;border-radius:var(--r);overflow:hidden;background:var(--creme-2)}
+.flyer img{width:100%;height:auto}
+.event-text{grid-column:6/13;background:var(--creme-2);border-radius:var(--r);padding:clamp(2rem,4vw,4rem);display:flex;flex-direction:column;justify-content:space-between;gap:2.5rem}
+.event-text p{max-width:40ch;color:var(--gedaempft);margin-top:1.5rem}
+.daten{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}
+.daten div{background:var(--creme);border-radius:18px;padding:1.3rem}
+.daten b{display:block;font-family:'Bricolage Grotesque',sans-serif;font-size:1.6rem;font-weight:600;letter-spacing:-.025em;line-height:1.1}
+.daten span{display:block;margin-top:.3rem;font-size:.92rem;color:var(--gedaempft)}
+.event-text .cta{display:flex;flex-wrap:wrap;gap:.6rem}
+.reihe{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:clamp(2rem,4vw,3.5rem)}
+.reihe article{background:var(--creme-2);border-radius:var(--r);padding:clamp(1.5rem,3vw,2.5rem);display:flex;flex-direction:column;gap:1rem;min-height:300px;justify-content:space-between}
+.reihe article:nth-child(2){background:var(--bordeaux);color:var(--creme)}
+.reihe h3{font-size:clamp(1.8rem,3vw,2.6rem)}
+.reihe p{color:var(--gedaempft);max-width:30ch}
+.reihe article:nth-child(2) p{color:var(--auf-dunkel)}
+.reihe .tag{font-weight:600;font-variant-numeric:tabular-nums}
+.anfrage{background:var(--schwarz);color:var(--creme);border-radius:32px;margin:0 12px 12px;padding:clamp(2.5rem,6vw,5.5rem) 0}
+.anfrage .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:end;gap:2rem 4rem}
+.anfrage h2{max-width:14ch}
+.anfrage p{margin-top:1.25rem;max-width:36ch;color:var(--auf-dunkel)}
+.anfrage .cta{display:flex;flex-wrap:wrap;gap:.6rem}
+@media (max-width:900px){
+  .titel-box{margin-top:84px;border-radius:26px}
+  .event-grid{display:flex;flex-direction:column}
+  .reihe{grid-template-columns:1fr}
+  .reihe article{min-height:0}
+  .anfrage{border-radius:26px}
+}
+@media (max-width:480px){.daten{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+
+<header class="nav">
+  <a class="brand" href="index.html">Wirtshaus an der Lahn</a>
+  <nav aria-label="Hauptnavigation">
+    <ul>
+      <li><a href="index.html#kueche">Küche</a></li>
+      <li><a href="index.html#speisekarte">Speisekarte</a></li>
+      <li><a href="index.html#draussen">Biergarten</a></li>
+      <li><a href="events.html" aria-current="page">Events</a></li>
+      <li><a href="index.html#kontakt">Kontakt</a></li>
+    </ul>
+  </nav>
+  <a class="btn" href="tel:+496441381678">Reservieren</a>
+</header>
+
+<main id="top">
+  <section class="titel-box dunkel" style="padding-block:0;padding-top:clamp(3rem,8vw,7rem);padding-bottom:clamp(2.5rem,6vw,5rem)">
+    <div class="wrap">
+      <h1>Events</h1>
+      <p>Turniere, feste Wochentage und die Kegelbahn für Ihre Gruppe.</p>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap">
+      <div class="event-grid">
+        <div class="flyer rv"><img src="images/wuerfelturnier.webp" alt="Plakat zum Würfelturnier am 10. April im Wirtshaus an der Lahn, Beginn 18 Uhr, Startgeld 10 Euro" width="1024" height="1536" loading="lazy"></div>
+        <div class="event-text rv">
+          <div>
+            <h2>Würfel&shy;turnier</h2>
+            <p>Ein Abend, ein Becher, viele Geschichten. Würfeln, lachen, mitfiebern. Jeder ist willkommen.</p>
+          </div>
+          <div class="daten">
+            <div><b>10. April</b><span>Datum</span></div>
+            <div><b>18:00 Uhr</b><span>Beginn</span></div>
+            <div><b>10 €</b><span>Startgeld</span></div>
+            <div><b>Kein Bargeld&shy;gewinn</b><span>Gespielt wird um die Ehre</span></div>
+          </div>
+          <div class="cta">
+            <a class="btn" href="tel:+496441381678">Platz anfragen</a>
+            <a class="btn zwei" href="index.html#kontakt">Anfahrt</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="reihe">
+        <article class="rv">
+          <h3>Schnitzel des Monats</h3>
+          <p>Jeden Monat eine wechselnde Spezialität, zu sehen im aktuellen Aushang.</p>
+          <span class="tag">Siehe Aushang</span>
+        </article>
+        <article class="rv">
+          <h3>Spare Ribs jeden Freitag</h3>
+          <p>Mit Barbecue-Soße, Brötchen und Salat.</p>
+          <span class="tag">19,90 €</span>
+        </article>
+        <article class="rv">
+          <h3>Kegelbahn</h3>
+          <p>Für Vereine, Kegelclubs und private Gruppen. Termine telefonisch abstimmen.</p>
+          <span class="tag">06441 381678</span>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="anfrage dunkel" style="padding-block:0;padding-top:clamp(2.5rem,6vw,5.5rem);padding-bottom:clamp(2.5rem,6vw,5.5rem)">
+    <div class="wrap">
+      <div>
+        <h2>Feier oder Vereinsabend planen?</h2>
+        <p>Rufen Sie uns an, wir besprechen Termin, Gruppengröße und Essen.</p>
+      </div>
+      <div class="cta">
+        <a class="btn" href="tel:+496441381678">06441 381678</a>
+        <a class="btn zwei" href="mailto:[info@beispiel.de]">E-Mail schreiben</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <span>Wirtshaus an der Lahn, Dammstraße 70, 35576 Wetzlar</span>
+    <span><a href="index.html">Startseite</a> &nbsp; <a href="index.html#impressum">Impressum</a> &nbsp; <a href="index.html#datenschutz">Datenschutz</a></span>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var io=new IntersectionObserver(function(es){
+    es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('an');io.unobserve(e.target);}});
+  },{threshold:.12});
+  document.querySelectorAll('.rv').forEach(function(el){io.observe(el);});
+})();
+</script>
+</body>
+</html>
